@@ -52,7 +52,7 @@ Arquivos e diretórios mais importantes:
 
 ## Como Usar
 
-Se você criou um repositório novo a partir deste template, siga este fluxo:
+Para usar este template no GitHub e começar um artigo novo, siga este fluxo:
 
 1. No GitHub, clique em `Use this template`.
 Depois, escolha `Create new repository` para gerar um repositório novo a partir deste template.

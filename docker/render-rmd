@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+input_file="${1:-article.Rmd}"
+
+if [[ ! -f "$input_file" ]]; then
+  printf 'Input file not found: %s\n' "$input_file" >&2
+  exit 1
+fi
+
+source_file="$(readlink -f "$input_file")"
+source_dir="$(dirname "$source_file")"
+source_name="$(basename "$source_file")"
+output_name="${source_name%.Rmd}.pdf"
+output_dir="$source_dir/out"
+build_dir="$(mktemp -d)"
+build_out_dir="$build_dir/out"
+
+cleanup() {
+  rm -rf "$build_dir"
+}
+
+trap cleanup EXIT
+
+cp -a "$source_dir"/. "$build_dir"/
+rm -rf "$build_dir/out"
+cd "$build_dir"
+
+export INPUT_RMD="$source_name"
+export TEXINPUTS="./style:"
+export BSTINPUTS=".:"
+
+Rscript -e "rmarkdown::render(Sys.getenv('INPUT_RMD'), clean = FALSE)"
+
+mkdir -p "$build_out_dir"
+
+for generated_file in \
+  "$build_dir/article.pdf" \
+  "$build_dir/article.tex" \
+  "$build_dir/article.knit.md" \
+  "$build_dir/article.aux" \
+  "$build_dir/article.bbl" \
+  "$build_dir/article.blg" \
+  "$build_dir/article.fdb_latexmk" \
+  "$build_dir/article.fls" \
+  "$build_dir/article.log" \
+  "$build_dir/article.out" \
+  "$build_dir/article.synctex.gz" \
+  "$build_dir/article.toc"
+do
+  if [[ -e "$generated_file" ]]; then
+    mv "$generated_file" "$build_out_dir/"
+  fi
+done
+
+for generated_dir in "$build_dir/article_cache" "$build_dir/article_files"
+do
+  if [[ -e "$generated_dir" ]]; then
+    mv "$generated_dir" "$build_out_dir/"
+  fi
+done
+
+rm -rf "$output_dir"
+cp -a "$build_out_dir" "$output_dir"

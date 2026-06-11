@@ -1,0 +1,45 @@
+# Build output
+out/
+
+# R Markdown / knitr intermediates
+*_cache/
+*_files/
+*.knit.md
+
+# TeX / BibTeX / latexmk intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+
+# Generated render targets kept out of version control
+*.pdf
+*.tex
+
+# R session and workspace noise
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+
+# IDE and editor metadata
+.Rproj.user/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-specific noise
+.DS_Store
+Thumbs.db

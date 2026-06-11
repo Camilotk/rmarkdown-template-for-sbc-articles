@@ -131,6 +131,14 @@ Se você preferir compilar sem Docker, vai precisar ter no sistema:
 - Pandoc
 - uma distribuição LaTeX com `pdflatex`
 
+No Ubuntu, você pode instalar essas dependências com:
+
+```bash
+make install-ubuntu
+```
+
+Esse comando instala os pacotes de sistema necessários e também instala o pacote `rmarkdown` no ambiente local.
+
 O comando básico de renderização é:
 
 ```r

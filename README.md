@@ -52,12 +52,41 @@ Arquivos e diretórios mais importantes:
 
 ## Como Usar
 
-Se você criou um repositório novo a partir deste template, o fluxo normal é:
+Se você criou um repositório novo a partir deste template, siga este fluxo:
 
-1. editar `article.Rmd`
-2. atualizar `references.bib`
-3. trocar ou remover os arquivos de exemplo em `assets/`
-4. compilar o PDF
+1. No GitHub, clique em `Use this template`.
+Depois, escolha `Create new repository` para gerar um repositório novo a partir deste template.
+
+2. Clone o repositório criado na sua máquina.
+Se quiser trabalhar localmente, faça o clone normal com Git e abra a pasta do projeto no seu editor.
+
+3. Edite o arquivo `article.Rmd`.
+O texto principal do artigo, as seções, as figuras geradas em R e as tabelas em Markdown ficam nesse arquivo.
+
+4. Atualize o arquivo `references.bib`.
+Coloque nele todas as referências bibliográficas do artigo em formato BibTeX.
+
+5. Revise a pasta `assets/`.
+Substitua as imagens de exemplo pelos seus próprios arquivos ou remova o que não for usar.
+
+6. Compile o projeto.
+O caminho recomendado é usar Docker com `make install` e depois `make build`.
+
+7. Verifique o resultado em `out/article.pdf`.
+Esse é o PDF final gerado a partir do template.
+
+Resumo prático dos arquivos que você normalmente vai editar:
+
+- `article.Rmd`: conteúdo do artigo
+- `references.bib`: referências bibliográficas
+- `assets/`: imagens e arquivos visuais usados no texto
+
+Arquivos que normalmente você não precisa editar:
+
+- `style/`: arquivos de estilo da SBC
+- `docker/`: suporte à compilação com Docker
+- `Dockerfile`: imagem de build
+- `Makefile`: comandos prontos para compilar e limpar
 
 ## Compilação Com Docker
 

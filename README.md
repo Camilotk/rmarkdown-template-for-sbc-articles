@@ -69,11 +69,11 @@ Coloque nele todas as referências bibliográficas do artigo em formato BibTeX.
 5. Revise a pasta `assets/`.
 Substitua as imagens de exemplo pelos seus próprios arquivos ou remova o que não for usar.
 
-6. Compile o projeto.
-O caminho recomendado é usar Docker com `make install` e depois `make build`.
+6. Compile o projeto no seu ambiente local.
+Se o seu ambiente local já estiver configurado com R, Pandoc e LaTeX, gere o PDF a partir do `article.Rmd`.
 
 7. Verifique o resultado em `out/article.pdf`.
-Esse é o PDF final gerado a partir do template.
+Esse é o PDF final gerado a partir do template, independentemente do método de compilação usado.
 
 Resumo prático dos arquivos que você normalmente vai editar:
 
@@ -90,7 +90,7 @@ Arquivos que normalmente você não precisa editar:
 
 ## Compilação Com Docker
 
-Esse é o caminho mais simples e mais reproduzível.
+Se você quiser compilar com Docker, siga estes passos na raiz do projeto.
 
 Para preparar o ambiente:
 
@@ -98,11 +98,15 @@ Para preparar o ambiente:
 make install
 ```
 
+Esse comando constrói a imagem Docker usada no processo de compilação.
+
 Para compilar:
 
 ```bash
 make build
 ```
+
+Esse comando gera o PDF e os arquivos intermediários.
 
 Todos os arquivos gerados vão para `out/`. Isso inclui o PDF final e também os arquivos intermediários produzidos no processo.
 

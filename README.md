@@ -1,12 +1,12 @@
 # Template R Markdown Para Artigos No Estilo SBC
 
-Este reposit\'orio \`e um template para quem quer come\c{c}ar um artigo acad\^emico em **R Markdown** e gerar PDF com o **estilo LaTeX da SBC (Sociedade Brasileira de Computa\c{c}\~ao)**.
+Este repositório é um template para quem quer começar um artigo acadêmico em **R Markdown** e gerar PDF com o **estilo LaTeX da SBC (Sociedade Brasileira de Computação)**.
 
-Se voc\^e est\'a procurando um **template R Markdown para artigos da SBC**, um **GitHub template para artigos acad\^emicos em R Markdown**, ou uma base para escrever artigos no formato da **Sociedade Brasileira de Computa\c{c}\~ao**, este projeto foi feito exatamente para esse uso.
+Se você está procurando um **template R Markdown para artigos da SBC**, um **GitHub template para artigos acadêmicos em R Markdown**, ou uma base para escrever artigos no formato da **Sociedade Brasileira de Computação**, este projeto foi feito exatamente para esse uso.
 
 ## Importante
 
-**Este n\~ao \`e um template oficial da SBC.**
+**Este não é um template oficial da SBC.**
 
 Ele foi montado para facilitar o uso do estilo da SBC em um projeto moderno com R Markdown, `make` e Docker. Antes de submeter um artigo, vale conferir as instru\c{c}\~oes do evento e comparar com a vers\~ao oficial do template distribu\'ida pela SBC ou pela confer\^encia.
 

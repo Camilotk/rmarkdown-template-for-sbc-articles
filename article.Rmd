@@ -124,7 +124,7 @@ knitr::kable(
   ),
   format = "latex",
   booktabs = TRUE,
-  caption = "Example of a table written directly in Markdown."
+  caption = "Example of a table written directly in R."
 )
 ```
 

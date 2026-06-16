@@ -25,7 +25,6 @@ out/
 
 # Generated render targets kept out of version control
 *.pdf
-*.tex
 
 # R session and workspace noise
 .Rhistory

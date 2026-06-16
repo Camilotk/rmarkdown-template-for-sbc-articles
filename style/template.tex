@@ -2,7 +2,7 @@
 
 \usepackage{sbc-template}
 \usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
+\usepackage[brazil,english]{babel}
 \usepackage{longtable,booktabs,array}
 \usepackage{graphicx}
 \usepackage{url}
@@ -40,10 +40,9 @@ $if(addresses)$
 \address{$for(addresses)$
 $if(addresses.inst)$\inst{$addresses.inst$}$endif$$for(addresses.lines)$$addresses.lines$$sep$\\
 $endfor$%
-$if(addresses.email)$\\[-6pt]\email{$addresses.email$}$endif$
 $sep$
 \nextinstitute
-$endfor$}
+$endfor$$if(email)$\\[-6pt]\email{$email$}$endif$}
 $endif$
 
 $if(title)$

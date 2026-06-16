@@ -5,30 +5,28 @@ author:
     inst: 1
   - name: "Rafael H. Bordini"
     inst: 2
-  - name: "Flavio Rech Wagner"
+  - name: "Flávio Rech Wagner"
     inst: 1
-  - name: "Jomi F. Hubner"
+  - name: "Jomi F. Hübner"
     inst: 3
 addresses:
   - inst: 1
     lines:
-      - "Instituto de Informatica -- Universidade Federal do Rio Grande do Sul (UFRGS)"
+      - "Instituto de Informática -- Universidade Federal do Rio Grande do Sul (UFRGS)"
       - "Caixa Postal 15.064 -- 91.501-970 -- Porto Alegre -- RS -- Brazil"
-    email: "{nedel,flavio}@inf.ufrgs.br"
   - inst: 2
     lines:
       - "Department of Computer Science -- University of Durham"
       - "Durham, U.K."
-    email: "R.Bordini@durham.ac.uk"
   - inst: 3
     lines:
-      - "Departamento de Sistemas e Computacao"
-      - "Universidade Regional de Blumenal (FURB) -- Blumenau, SC -- Brazil"
-    email: "jomi@inf.furb.br"
+      - "Departamento de Sistemas e Computação"
+      - "Universidade Regional de Blumenau (FURB) -- Blumenau, SC -- Brazil"
+email: "{nedel,flavio}@inf.ufrgs.br, R.Bordini@durham.ac.uk, jomi@inf.furb.br"
 abstract: |
   This meta-paper describes the style to be used in articles and short papers for SBC conferences. For papers in English, you should add just an abstract while for the papers in Portuguese, we also ask for an abstract in Portuguese ("resumo"). In both cases, abstracts should not have more than 10 lines and must be in the first page of the paper.
 resumo: |
-  Este meta-artigo descreve o estilo a ser usado na confeccao de artigos e resumos de artigos para publicacao nos anais das conferencias organizadas pela SBC. E solicitada a escrita de resumo e abstract apenas para os artigos escritos em portugues. Artigos em ingles deverao apresentar apenas abstract. Nos dois casos, o autor deve tomar cuidado para que o resumo e o abstract nao ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira pagina do artigo.
+  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e resumos de artigos para publicação nos anais das conferências organizadas pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos escritos em português. Artigos em inglês deverão apresentar apenas abstract. Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract) não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira página do artigo.
 output:
   pdf_document:
     template: style/template.tex
@@ -65,58 +63,33 @@ The subsection titles must be in boldface, 12 pt, flush left.
 
 # Figures and Captions
 
-Figure and table captions should be centered if less than one line; otherwise they should be justified and indented by 0.8 cm on both margins. The caption font must be Helvetica, 10 point, boldface, with 6 points of space before and after each caption.
+Figure and table captions should be centered if less than one line (Figure \ref{fig:fig1}), otherwise justified and indented by 0.8 cm on both margins, as shown in Figure \ref{fig:fig2}. The caption font must be Helvetica, 10 point, boldface, with 6 points of space before and after each caption.
 
-The next example shows a figure generated directly by R during compilation.
-
-```{r r-plot-example, echo=FALSE, fig.cap='Example of a figure generated directly by R during compilation.', fig.width=5, fig.height=3.5}
-plot(
-  pressure$temperature,
-  pressure$pressure,
-  type = "b",
-  pch = 19,
-  col = "black",
-  xlab = "Temperature",
-  ylab = "Pressure"
-)
-```
-
-```{r fig1, echo=FALSE, out.width='50%', fig.cap='A typical figure'}
+```{r fig1, echo=FALSE, fig.pos='!htb', out.width='42%', fig.cap='A typical figure'}
 knitr::include_graphics("assets/fig1.jpg")
 ```
 
-```{r fig2, echo=FALSE, out.width='30%', fig.cap='This figure is an example of a figure caption taking more than one line and justified considering the SBC margins.'}
+```{r fig2, echo=FALSE, fig.pos='!htb', out.width='62%', fig.cap='This figure is an example of a figure caption taking more than one line and justified considering margins mentioned in Section 5.'}
 knitr::include_graphics("assets/fig2.jpg")
 ```
 
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid thick, doubled, or unnecessary framing lines. When reporting empirical data, do not use more decimal digits than warranted by their precision and reproducibility. Table captions must be placed before the table.
+In tables, try to avoid the use of colored or shaded backgrounds, and avoid thick, doubled, or unnecessary framing lines. When reporting empirical data, do not use more decimal digits than warranted by their precision and reproducibility. Table caption must be placed before the table (see Table \ref{tab:variables}) and the font used must also be Helvetica, 10 point, boldface, with 6 points of space before and after each caption.
 
-Table: Example of a table written directly in Markdown.
-
-| Technique | Precision | Reproducibility |
-|-----------|-----------|-----------------|
-| A         | High      | Medium          |
-| B         | Medium    | High            |
-| C         | Low       | Medium          |
-
-```{r table-image, echo=FALSE, out.width='70%', fig.cap='Variables to be considered on the evaluation of interaction techniques.'}
-knitr::include_graphics("assets/table.jpg")
-```
+\begin{table}[!htb]
+\centering
+\caption{Variables to be considered on the evaluation of interaction techniques}
+\label{tab:variables}
+\includegraphics[width=0.62\linewidth]{assets/table}
+\end{table}
 
 # Images
 
-All images and illustrations should be in black-and-white, or gray tones, except for papers that will be electronically available. The image resolution on paper should be about 600 dpi for black-and-white images, and 150-300 dpi for grayscale images. Do not include images with excessive resolution, as they may take hours to print without any visible difference in the result.
-
-# LaTeX
-
-R Markdown and LaTeX can be written in the same document without any problem. This is useful when most of the text is easier to write in Markdown, but specific mathematical notation is better expressed directly in LaTeX.
-
-For example, the discrete Fourier transform used in the Fast Fourier Transform can be written as:
-
-$$
-X_k = \sum_{n=0}^{N-1} x_n e^{-i 2\pi kn / N}, \quad k = 0, 1, \ldots, N-1.
-$$
+All images and illustrations should be in black-and-white, or gray tones, excepting for the papers that will be electronically available (on CD-ROMs, internet, etc.). The image resolution on paper should be about 600 dpi for black-and-white images, and 150-300 dpi for grayscale images. Do not include images with excessive resolution, as they may take hours to print, without any visible difference in the result.
 
 # References
 
-Bibliographic references must be unambiguous and uniform. We recommend giving the author names references in brackets, for example \cite{knuth:84}, \cite{boulic:91}, and \cite{smith:99}.
+Bibliographic references must be unambiguous and uniform. We recommend giving the author names references in brackets, e.g. \cite{knuth:84}, \cite{boulic:91}; or dates in parentheses, e.g. Knuth (1984), Smith and Jones (1999).
+
+The references must be listed using 12 point font size, with 6 points of space before each reference. The first line of each reference should not be indented, while the subsequent should be indented by 0.5 cm.
+
+\nocite{dyer:95,holton:95,smith:99}

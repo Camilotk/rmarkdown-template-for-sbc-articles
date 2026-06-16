@@ -3,7 +3,7 @@
 \usepackage{sbc-template}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil,english]{babel}
-\usepackage{longtable,booktabs,array}
+\usepackage{booktabs,array}
 \usepackage{graphicx}
 \usepackage{url}
 
@@ -38,7 +38,7 @@ $endif$
 
 $if(addresses)$
 \address{$for(addresses)$
-$if(addresses.inst)$\inst{$addresses.inst$}$endif$$for(addresses.lines)$$addresses.lines$$sep$\\
+$for(addresses.lines)$$addresses.lines$$sep$\\
 $endfor$%
 $sep$
 \nextinstitute

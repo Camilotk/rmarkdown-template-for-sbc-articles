@@ -20,10 +20,15 @@
 % captions
 %updated 2017. Change deprecated caption2 to caption package
 \RequirePackage[bf,sf,footnotesize,indent]{caption}
+\RequirePackage{float}
+\RequirePackage[section]{placeins}
+\RequirePackage{flafter}
 \setlength{\captionmargin}{0.8cm}
 \renewcommand{\captionfont}{\sffamily\footnotesize\bfseries}
 %\renewcommand{\captionlabeldelim}{.}
 \captionsetup{labelsep=period}
+\def\fps@figure{htbp}
+\def\fps@table{htbp}
 
 % font
 \RequirePackage{times}

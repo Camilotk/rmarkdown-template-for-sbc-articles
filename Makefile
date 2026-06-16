@@ -5,7 +5,7 @@ IMAGE := sbc-rmarkdown:latest
 OUT_DIR := out
 PDF := $(OUT_DIR)/$(MAIN).pdf
 RMD := $(MAIN).Rmd
-LATEX_DEPS := references.bib sbc.bst style/sbc-template.sty style/template.tex style/frontmatter.tex
+LATEX_DEPS := references.bib sbc.bst style/sbc-template.sty style/template.tex
 ASSET_DEPS := $(wildcard assets/*)
 
 .PHONY: help all install install-local install-ubuntu docker-build build render clean distclean

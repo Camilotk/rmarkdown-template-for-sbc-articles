@@ -28,10 +28,39 @@ $endfor$
 
 \begin{document}
 
-$for(include-before)$
-$include-before$
+$if(title)$
+\title{$title$}
+$endif$
 
-$endfor$
+$if(author)$
+\author{$for(author)$$author.name$\inst{$author.inst$}$sep$, $endfor$}
+$endif$
+
+$if(addresses)$
+\address{$for(addresses)$
+$if(addresses.inst)$\inst{$addresses.inst$}$endif$$for(addresses.lines)$$addresses.lines$$sep$\\
+$endfor$%
+$if(addresses.email)$\\[-6pt]\email{$addresses.email$}$endif$
+$sep$
+\nextinstitute
+$endfor$}
+$endif$
+
+$if(title)$
+\maketitle
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+$if(resumo)$
+\begin{resumo}
+$resumo$
+\end{resumo}
+$endif$
 
 $body$
 

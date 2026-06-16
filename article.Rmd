@@ -79,30 +79,18 @@ The subsection titles must be in boldface, 12 pt, flush left.
 
 Figure and table captions should be centered if less than one line (Figure \ref{fig:fig1}), otherwise justified and indented by 0.8 cm on both margins, as shown in Figure \ref{fig:fig2}. The caption font must be Helvetica, 10 point, boldface, with 6 points of space before and after each caption.
 
-```{r fig1, echo=FALSE, out.width='50%', fig.cap='A typical figure'}
+```{r fig1, echo=FALSE, fig.pos='ht', out.width='50%', fig.cap='A typical figure'}
 knitr::include_graphics("assets/fig1.jpg")
 ```
 
-```{r fig2, echo=FALSE, out.width='30%', fig.cap='This figure is an example of a figure caption taking more than one line and justified considering margins mentioned in Section 5.'}
+```{r fig2, echo=FALSE, fig.pos='ht', out.width='30%', fig.cap='This figure is an example of a figure caption taking more than one line and justified considering margins mentioned in Section 5.'}
 knitr::include_graphics("assets/fig2.jpg")
 ```
 
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid thick, doubled, or unnecessary framing lines. When reporting empirical data, do not use more decimal digits than warranted by their precision and reproducibility. Table caption must be placed before the table (see Table \ref{tab:tab:variables}) and the font used must also be Helvetica, 10 point, boldface, with 6 points of space before and after each caption.
+In tables, try to avoid the use of colored or shaded backgrounds, and avoid thick, doubled, or unnecessary framing lines. When reporting empirical data, do not use more decimal digits than warranted by their precision and reproducibility. Table caption must be placed before the table (see Table \ref{fig:exTable1}) and the font used must also be Helvetica, 10 point, boldface, with 6 points of space before and after each caption.
 
-A table with R:
-
-```{r variables-table, echo=FALSE, results='asis'}
-knitr::kable(
-  data.frame(
-    Variable = c("Distance", "Accuracy", "Time"),
-    Relevance = c("High", "High", "Medium"),
-    Measure = c("Numeric", "Numeric", "Numeric")
-  ),
-  format = "latex",
-  booktabs = TRUE,
-  caption = "Variables to be considered on the evaluation of interaction techniques.",
-  label = "tab:variables"
-)
+```{r exTable1, echo=FALSE, fig.env='table', fig.pos='ht', out.width='70%', fig.cap='Variables to be considered on the evaluation of interaction techniques'}
+knitr::include_graphics("assets/table.jpg")
 ```
 
 # Graphs with R
